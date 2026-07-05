@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">ECC Finance mark</title>
+  <desc id="desc">Monogramme abstrait ECC Finance avec courbe de marché.</desc>
+  <rect width="160" height="160" rx="28" fill="#101614"/>
+  <path d="M34 104V52h58v16H52v20h34v15H52v1h43v16H34Z" fill="#F5F0E8"/>
+  <path d="M71 112c18-36 33-52 55-62" fill="none" stroke="#C49A4A" stroke-width="9" stroke-linecap="round"/>
+  <path d="M113 48h18v18" fill="none" stroke="#C49A4A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="112" cy="82" r="8" fill="#1C8A78"/>
+</svg>
