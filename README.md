@@ -9,7 +9,12 @@ Site officiel statique du club ECC Finance de l'École Centrale Casablanca.
 - Rejoindre: formulaire de candidature par pôle
 - Programme 2026: ateliers, conférence métiers, workshop et note mensuelle
 - Publications: articles courts et research desk étudiant
-- Partenaires: vitrine des collaborations et appel aux partenaires
+- Research Desk: mission, méthode, calendrier éditorial et candidature
+- Partenaires: page dédiée, packs, processus, formulaire et Partner Pack PDF
+
+## Formulaires
+
+Les formulaires publics utilisent FormSubmit pour envoyer les candidatures et demandes de partenariat vers `hamza.sennah@centrale-casablanca.ma` depuis GitHub Pages, sans backend dédié.
 
 ## Publication GitHub Pages
 

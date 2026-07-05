@@ -56,7 +56,8 @@
         <a href="#join">Rejoindre</a>
         <a href="#program">Programme</a>
         <a href="#research">Publications</a>
-        <a href="#partners">Partenaires</a>
+        <a href="research-desk.html">Research Desk</a>
+        <a href="partenaires.html">Partenaires</a>
       </nav>
     </header>
 
@@ -70,7 +71,7 @@
           <p class="hero-lead">Le club qui transforme la curiosité financière en culture de marché, en analyses lisibles et en passerelles concrètes avec les professionnels.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#join">Rejoindre le club</a>
-            <a class="button button-secondary" href="#partners">Devenir partenaire</a>
+            <a class="button button-secondary" href="partenaires.html">Devenir partenaire</a>
             <a class="button button-secondary" href="#research">Lire nos analyses</a>
           </div>
         </div>
@@ -82,7 +83,7 @@
       <section class="section club-section" id="club" aria-labelledby="club-title">
         <div class="section-heading">
           <p class="eyebrow">Le Club</p>
-          <h2 id="club-title">Une cellule finance plus exigeante, plus ouverte, plus utile.</h2>
+          <h2 id="club-title">Une cellule finance exigeante, ouverte et utile.</h2>
           <p>ECC Finance gère les activités associatives liées à la finance à Centrale Casablanca: initiation, orientation, rencontres, simulations métiers et mise en relation avec l'écosystème.</p>
         </div>
 
@@ -100,7 +101,7 @@
           <article class="mission-card reveal">
             <span class="card-number">03</span>
             <h3>Relier</h3>
-            <p>Un pont propre entre étudiants, alumni, entreprises, plateformes d'analyse et intervenants qui veulent investir dans les talents.</p>
+            <p>Un pont structuré entre étudiants, alumni, entreprises, plateformes d'analyse et intervenants qui veulent investir dans les talents.</p>
           </article>
           <article class="mission-card reveal">
             <span class="card-number">04</span>
@@ -247,7 +248,7 @@
           <div class="join-copy">
             <p class="eyebrow">Rejoindre</p>
             <h2 id="join-title">Rejoindre le club ou candidater au Research Desk.</h2>
-            <p>Le club recherche des profils curieux, fiables et prêts à écrire, organiser, analyser ou apprendre vite. Le formulaire prépare un email de candidature avec les informations essentielles.</p>
+            <p>Le club recherche des profils curieux, fiables et prêts à écrire, organiser, analyser ou apprendre vite. Après l'envoi, l'équipe ECC Finance vous contactera pour un court échange selon le pôle choisi.</p>
             <div class="join-badges" aria-label="Domaines possibles">
               <span>Research Desk</span>
               <span>Événements</span>
@@ -257,18 +258,22 @@
             </div>
           </div>
 
-          <form class="join-form" data-join-form>
+          <form class="join-form" action="https://formsubmit.co/hamza.sennah@centrale-casablanca.ma" method="POST" data-ajax-form data-email="hamza.sennah@centrale-casablanca.ma" data-subject="Candidature ECC Finance" data-success="Votre candidature a bien été envoyée. L'équipe ECC Finance vous contactera pour un court échange selon le pôle choisi.">
             <div class="form-field">
-              <label for="candidate-name">Nom complet</label>
-              <input id="candidate-name" name="name" autocomplete="name" required>
+              <label for="candidate-lastname">Nom</label>
+              <input id="candidate-lastname" name="Nom" autocomplete="family-name" required>
+            </div>
+            <div class="form-field">
+              <label for="candidate-firstname">Prénom</label>
+              <input id="candidate-firstname" name="Prénom" autocomplete="given-name" required>
             </div>
             <div class="form-field">
               <label for="candidate-track">Filière</label>
-              <input id="candidate-track" name="track" placeholder="Ex: GI, Data, tronc commun" required>
+              <input id="candidate-track" name="Filière" placeholder="Ex: GI, Data, tronc commun" required>
             </div>
             <div class="form-field">
               <label for="candidate-year">Année</label>
-              <select id="candidate-year" name="year" required>
+              <select id="candidate-year" name="Année" required>
                 <option value="">Choisir</option>
                 <option>1A</option>
                 <option>2A</option>
@@ -278,7 +283,7 @@
             </div>
             <div class="form-field">
               <label for="candidate-domain">Je veux rejoindre</label>
-              <select id="candidate-domain" name="domain" required>
+              <select id="candidate-domain" name="Pôle souhaité" required>
                 <option value="">Choisir</option>
                 <option>Research Desk</option>
                 <option>Événements</option>
@@ -289,8 +294,13 @@
             </div>
             <div class="form-field form-field-full">
               <label for="candidate-motivation">Motivation</label>
-              <textarea id="candidate-motivation" name="motivation" rows="5" placeholder="Pourquoi veux-tu rejoindre ECC Finance ?" required></textarea>
+              <textarea id="candidate-motivation" name="Motivation" rows="5" placeholder="Pourquoi veux-tu rejoindre ECC Finance ?" required></textarea>
             </div>
+            <input type="hidden" name="_subject" value="Candidature ECC Finance">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input class="visually-hidden" type="text" name="_honey" tabindex="-1" autocomplete="off">
+            <p class="form-note">Après l'envoi, l'équipe ECC Finance vous contactera pour un court échange selon le pôle choisi.</p>
             <button class="button button-primary form-submit" type="submit">Envoyer la candidature</button>
             <p class="form-status" data-form-status aria-live="polite"></p>
           </form>
@@ -407,6 +417,7 @@
             </div>
 
             <p class="disclaimer">Les contenus publiés par ECC Finance ont une finalité pédagogique et informative. Ils ne constituent ni conseil en investissement, ni recommandation d'achat ou de vente.</p>
+            <a class="button button-secondary research-page-link" href="research-desk.html">Découvrir le Research Desk</a>
           </div>
         </div>
       </section>
@@ -416,7 +427,10 @@
           <p class="eyebrow">Partenaires</p>
           <h2 id="partners-title">La vitrine la plus visible du site, pensée pour convaincre.</h2>
           <p>ECC Finance propose aux partenaires un accès direct à une communauté d'ingénieurs intéressés par la finance, avec des formats concrets: conférence, workshop, publication, recrutement, visibilité campus.</p>
-          <a class="button button-primary partner-pack-link" href="assets/partner-pack-ecc-finance.pdf" download>Télécharger le dossier partenaire</a>
+          <div class="partner-intro-actions">
+            <a class="button button-primary partner-pack-link" href="partenaires.html">Voir la page partenaires</a>
+            <a class="button button-secondary partner-pack-link" href="assets/partner-pack-ecc-finance.pdf" download>Télécharger le dossier partenaire</a>
+          </div>
         </div>
 
         <div class="partner-stage">
@@ -454,7 +468,7 @@
               <li>Workshop annuel et avantages formation pour les membres</li>
             </ul>
             <div class="spotlight-actions">
-              <a class="button button-primary" href="mailto:club.finance@centrale-casablanca.ma?subject=Partenariat%20ECC%20Finance">Construire un partenariat</a>
+              <a class="button button-primary" href="partenaires.html#partner-contact">Construire un partenariat</a>
               <a class="button button-secondary" href="assets/partner-pack-ecc-finance.pdf" download>Télécharger le dossier partenaire</a>
             </div>
           </article>

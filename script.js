@@ -44,6 +44,10 @@ const partners = {
 
 const candidateEmail = "hamza.sennah@centrale-casablanca.ma";
 
+function formSubmitEndpoint(email) {
+  return `https://formsubmit.co/ajax/${encodeURIComponent(email)}`;
+}
+
 function initTicker() {
   const ticker = document.querySelector("[data-ticker]");
   if (!ticker) return;
@@ -145,7 +149,7 @@ function initPartners() {
         ${partner.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
       </ul>
       <div class="spotlight-actions">
-        <a class="button button-primary" href="mailto:club.finance@centrale-casablanca.ma?subject=Partenariat%20ECC%20Finance">Construire un partenariat</a>
+        <a class="button button-primary" href="partenaires.html#partner-contact">Construire un partenariat</a>
         <a class="button button-secondary" href="assets/partner-pack-ecc-finance.pdf" download>Télécharger le dossier partenaire</a>
       </div>
     `;
@@ -159,40 +163,63 @@ function initPartners() {
   });
 }
 
-function initJoinForm() {
-  const form = document.querySelector("[data-join-form]");
-  const status = document.querySelector("[data-form-status]");
-  if (!form) return;
+function buildMailtoFallback(form, email, subject) {
+  const data = new FormData(form);
+  const lines = [];
+  data.forEach((value, key) => {
+    if (key.startsWith("_")) return;
+    const cleanValue = value.toString().trim();
+    if (cleanValue) lines.push(`${key}: ${cleanValue}`);
+  });
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+}
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const name = data.get("name")?.toString().trim();
-    const track = data.get("track")?.toString().trim();
-    const year = data.get("year")?.toString().trim();
-    const domain = data.get("domain")?.toString().trim();
-    const motivation = data.get("motivation")?.toString().trim();
+function initAjaxForms() {
+  const forms = document.querySelectorAll("[data-ajax-form]");
 
-    const body = [
-      "Bonjour ECC Finance,",
-      "",
-      "Je souhaite rejoindre le club / candidater au Research Desk.",
-      "",
-      `Nom: ${name}`,
-      `Filière: ${track}`,
-      `Année: ${year}`,
-      `Je veux rejoindre: ${domain}`,
-      "",
-      "Motivation:",
-      motivation,
-    ].join("\n");
+  forms.forEach((form) => {
+    const status = form.querySelector("[data-form-status]");
+    const submit = form.querySelector("[type='submit']");
+    const email = form.dataset.email || candidateEmail;
+    const subject = form.dataset.subject || "Message ECC Finance";
+    const successMessage = form.dataset.success || "Votre message a bien été transmis.";
 
-    const subject = encodeURIComponent(`Candidature ECC Finance - ${name}`);
-    window.location.href = `mailto:${candidateEmail}?subject=${subject}&body=${encodeURIComponent(body)}`;
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      data.set("_subject", subject);
+      data.set("_template", "table");
+      data.set("_captcha", "false");
 
-    if (status) {
-      status.textContent = `Votre client mail va s'ouvrir avec une candidature préremplie vers ${candidateEmail}.`;
-    }
+      if (status) {
+        status.textContent = "Envoi en cours...";
+        status.classList.remove("is-error");
+      }
+      if (submit) submit.disabled = true;
+
+      try {
+        const response = await fetch(formSubmitEndpoint(email), {
+          method: "POST",
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) throw new Error("Form submission failed");
+
+        form.reset();
+        if (status) status.textContent = successMessage;
+      } catch (error) {
+        const fallback = buildMailtoFallback(form, email, subject);
+        if (status) {
+          status.classList.add("is-error");
+          status.innerHTML = `L'envoi direct n'a pas abouti. <a href="${fallback}">Ouvrir un email prérempli</a>.`;
+        }
+      } finally {
+        if (submit) submit.disabled = false;
+      }
+    });
   });
 }
 
@@ -201,4 +228,4 @@ initHeader();
 initReveal();
 initFilters();
 initPartners();
-initJoinForm();
+initAjaxForms();
