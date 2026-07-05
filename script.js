@@ -31,7 +31,7 @@ const partners = {
     ],
   },
   future: {
-    kicker: "Opportunite",
+    kicker: "Opportunité",
     title: "Votre structure",
     text: "Banque, cabinet, fintech, société de bourse, fonds, alumni ou média spécialisé: ECC Finance peut transformer votre expertise en expérience utile pour les étudiants.",
     bullets: [
@@ -179,7 +179,7 @@ function initJoinForm() {
       `Nom: ${name}`,
       `Filière: ${track}`,
       `Année: ${year}`,
-      `Domaine préféré: ${domain}`,
+      `Je veux rejoindre: ${domain}`,
       "",
       "Motivation:",
       motivation,

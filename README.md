@@ -5,6 +5,9 @@ Site officiel statique du club ECC Finance de l'École Centrale Casablanca.
 ## Sections
 
 - Club: mission, vision, axes opérationnels
+- Équipe: bureau élu, pôles et responsabilités
+- Rejoindre: formulaire de candidature par pôle
+- Programme 2026: ateliers, conférence métiers, workshop et note mensuelle
 - Publications: articles courts et research desk étudiant
 - Partenaires: vitrine des collaborations et appel aux partenaires
 
