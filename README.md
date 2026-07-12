@@ -29,6 +29,6 @@ Dans GitHub, activer:
 
 L'URL publique attendue est:
 
-`https://eccfinance.github.io/Ecc_Finance/`
+`https://hamzasennah.github.io/Ecc-Finance/`
 
 Les PDFs sources sont volontairement ignorés par Git pour ne pas publier de documents de convention ou de coordonnées personnelles.
