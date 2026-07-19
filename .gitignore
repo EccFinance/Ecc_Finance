@@ -1,5 +1,6 @@
 *.pdf
 !assets/partner-pack-ecc-finance.pdf
+!assets/ecc-finance-weekly-vol1-n1.pdf
 tmp/
 node_modules/
 dist/

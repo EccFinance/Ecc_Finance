@@ -126,7 +126,8 @@ function initFilters() {
       buttons.forEach((item) => item.classList.toggle("active", item === button));
 
       posts.forEach((post) => {
-        const shouldShow = filter === "all" || post.dataset.category === filter;
+        const categories = post.dataset.category.split(/\s+/);
+        const shouldShow = filter === "all" || categories.includes(filter);
         post.classList.toggle("is-hidden", !shouldShow);
       });
     });
